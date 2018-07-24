@@ -3,6 +3,7 @@
  */
 var myApp = angular.module('myApp', ['ui.router', 'myApp.controllers']);
 myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+
     $urlRouterProvider.when('', '/main');
     $stateProvider
         .state('login', {
@@ -18,7 +19,7 @@ myApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $
         })
 
         .state('main', {
-            url: 'main',
+            url: '/main',
             templateUrl: 'templates/main.html',
             controller: 'mainCtrl'
         })

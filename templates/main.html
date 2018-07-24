@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div id="main-container">
+    <div class="upload-window">
+        <div>
+            <div id="upload-text">请把文件拖到此处</div>
+            <span id="file-size-msg">
+                <em>请按照：姓名 + 周报 + 日期 的格式提交word / pdf版本文档</em> <br>
+                <em>例如：张三周报 20180716</em>
+                </span>
+            <input id="file-upload"
+                   type="file"
+                   accept=".doc,.docx,.pdf"
+                   name="fileUploaded"
+                   onchange = "angular.element(this).scope().getFile(this.files)"/>
+            <label
+                    for="file-upload"
+                    id="browse"
+                    class="btn browse btn-primary"
+                    title="选择要上传的文件">选择要上传的文件</label>
+        </div>
+    </div>
+    <div ng-show="hasFile">
+        <button class= "btn" id="changeState" ng-click="showFile(); $event.stopPropagation();" style="display: none"></button>
+        <table id="fileInfo">
+            <tr>
+                <td style="width: 50%">
+                    {{file.name}}
+                </td>
+                <td style="width: 20%">
 
-</body>
-</html>
+                    <select name="uploader" id="selector">
+                        <option value="0">提交者</option>
+                        <option value="1">张三</option>
+                        <option value="2">李四</option>
+                        <option value="3">王五</option>
+                    </select>
+
+                </td>
+                <td style="width: 30%;">
+                    <button class="btn btn-primary">
+                        上传
+                    </button>
+                    <button class="btn btn-warning" style="margin-left:10px;">
+                        取消
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
