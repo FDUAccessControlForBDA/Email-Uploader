@@ -22,24 +22,20 @@
         <button class= "btn" id="changeState" ng-click="showFile(); $event.stopPropagation();" style="display: none"></button>
         <table id="fileInfo">
             <tr>
-                <td style="width: 50%">
+                <td style="width: 40%">
                     {{file.name}}
                 </td>
-                <td style="width: 20%">
-
-                    <select name="uploader" id="selector">
-                        <option value="0">提交者</option>
-                        <option value="1">张三</option>
-                        <option value="2">李四</option>
-                        <option value="3">王五</option>
+                <td style="width: 35%">
+                    <span>上传者：</span>
+                    <select id="selector" ng-model="selectedPerson" ng-init="selectedPerson=nameList0[0]" ng-options="x.name for x in nameList0">
                     </select>
 
                 </td>
-                <td style="width: 30%;">
-                    <button class="btn btn-primary">
+                <td style="width: 25%;">
+                    <button class="btn btn-primary" ng-click="uploadFile()">
                         上传
                     </button>
-                    <button class="btn btn-warning" style="margin-left:10px;">
+                    <button class="btn btn-warning" style="margin-left:10px;" ng-click="cancelUpload()">
                         取消
                     </button>
                 </td>

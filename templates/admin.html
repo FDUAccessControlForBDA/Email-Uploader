@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<div class="admin-container" ng-show="user == true">
+    <h2 class="admin-title">名 单 管 理</h2>
+    <div class="add-student">
+        <input type="text"
+               name="s_id"
+               class="form-control admin-input"
+               ng-model="addStudent.s_id"
+               placeholder="请输入学号"
+               required>
+        <input type="text"
+               name="username"
+               class="form-control admin-input"
+               ng-model="addStudent.name"
+               ng-minlength="4"
+               ng-maxlength="20"
+               placeholder="请输入姓名"
+               required>
+        <button class="btn btn-info" ng-click="addNewStudent()">添加</button>
+    </div>
+    <table id="student-table">
+        <tr class="colored">
+            <td>学 号</td>
+            <td>姓 名</td>
+            <td>操 作</td>
+        </tr>
+        <tr class="bordered" ng-repeat="student in studentList">
+            <td>{{student.s_id}}</td>
+            <td>{{student.name}}</td>
+            <td><a class="inputError" ng-click="deleteStudent(student.id)">删除</a></td>
+        </tr>
+    </table>
+    <div style="float: right;">
+        <a class="back-button" ng-click="logOut()">&lt;&lt;退出</a>
+    </div>
+</div>
+<div class="admin-container" ng-show="user == false">
+    <p>请先点击右上角登录</p>
+</div>

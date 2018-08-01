@@ -111,9 +111,76 @@ input[type=file] {
 }
 
 #selector {
-    width: 80%;
+    width: 60%;
     height: 25px;
     line-height:25px;
     border: 1px solid rgba(56, 132, 198, 0.4);
     border-radius: 2px;
+}
+
+/*login.css*/
+#login-container {
+    width:610px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:70px;
+}
+
+.wrapper-login{
+    width: 300px;
+    margin: 20px auto;
+}
+
+.inputError,.inputError:hover{
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-title {
+    text-align: center;
+}
+
+#login {
+    width:300px;
+}
+
+/*admin.css*/
+.admin-container {
+    width: 600px;
+    margin: auto;
+}
+
+.admin-title {
+    text-align: center;
+}
+
+.admin-input {
+    width: 200px;
+    margin-right: 20px;
+    float: left;
+}
+
+.add-student{
+    width: 500px;
+    margin: 20px auto;
+}
+
+#student-table {
+    width: 500px;
+    margin:auto;
+}
+
+.colored {
+    width:5em;
+    background-color: rgba(58, 159, 227, 0.29);
+    font-size: medium;
+}
+
+.bordered {
+    border-bottom: solid thin #e2e2e4;
+}
+
+.bordered td, .colored td {
+    padding: 5px 50px;
 }
